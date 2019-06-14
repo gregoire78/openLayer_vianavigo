@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/capabilities_1_1_1.dtd" >
+
+<WMT_MS_Capabilities version="1.1.1">
+  <Service>
+    <Name>OGC:WMS</Name>
+    <Title>GeoWebCache</Title>
+    <Abstract>GeoWebCache is an advanced tile cache for WMS servers.It supports a large variety of protocols and
+      formats, including WMS-C, WMTS, KML, Google Maps and Virtual Earth.</Abstract>
+    <KeywordList>
+      <Keyword>WFS</Keyword>
+      <Keyword>WMS</Keyword>
+      <Keyword>WMTS</Keyword>
+      <Keyword>GEOWEBCACHE</Keyword>
+    </KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://vgo-geowebcache/geowebcache/service/wms?SERVICE=WMS&amp;"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>John Smith</ContactPerson>
+        <ContactOrganization>John Smith inc.</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition>Geospatial Expert</ContactPosition>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address>1 Bumpy St.</Address>
+        <City>Hobart</City>
+        <StateOrProvince>TAS</StateOrProvince>
+        <PostCode>7005</PostCode>
+        <Country>Australia</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone>+61 3 0000 0000</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>+61 3 0000 0001</ContactFacsimileTelephone>
+      <ContactElectronicMailAddress>john.smith@example.com</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>NONE</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://vgo-geowebcache/geowebcache/service/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://vgo-geowebcache/geowebcache/service/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/html</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://vgo-geowebcache/geowebcache/service/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <DescribeLayer>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://vgo-geowebcache/geowebcache/service/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </DescribeLayer>
+      <GetLegendGraphic>
+        <Format>image/png</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/gif</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://vgo-geowebcache/geowebcache/service/wms?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetLegendGraphic>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+    </Exception>
+    <Layer>
+      <Title>GeoWebCache WMS</Title>
+      <Abstract>Note that not all GeoWebCache instances provide a full WMS service.</Abstract>
+      <LatLonBoundingBox minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+      <Layer>
+        <Name>SCHEMA</Name>
+        <Title>SCHEMA</Title>
+        <SRS>EPSG:102582</SRS>
+        <BoundingBox SRS="EPSG:102582" minx="-690.9661671323342" miny="-39.53016713233433" maxx="1359.7323342646685" maxy="1327.6021671323342"/>
+      </Layer>
+      <Layer>
+        <Name>GEO</Name>
+        <Title>GEO</Title>
+        <SRS>EPSG:102582</SRS>
+        <BoundingBox SRS="EPSG:102582" minx="500000.0" miny="2296799.593599187" maxx="703200.4064008128" maxy="2500000.0"/>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMT_MS_Capabilities>
